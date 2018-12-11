@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/MainApp/MainApp.iml" filepath="$PROJECT_DIR$/MainApp/MainApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/SkyWalker.iml" filepath="$PROJECT_DIR$/SkyWalker.iml" />
       <module fileurl="file://C:\SkyWalker\MainApp\app.iml" filepath="C:\SkyWalker\MainApp\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseutil/baseutil.iml" filepath="$PROJECT_DIR$/baseutil/baseutil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component/component.iml" filepath="$PROJECT_DIR$/component/component.iml" />
     </modules>
   </component>
 </project>
