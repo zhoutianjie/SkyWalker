@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SkyWalker</string>
+
+    <!--登录相关-->
+    <string name="server_adds">服务器地址</string>
+    <string name="account">帐号</string>
+    <string name="password">密码</string>
+    <string name="login_text">登录</string>
+    <string name="default_hit"> </string>
 </resources>

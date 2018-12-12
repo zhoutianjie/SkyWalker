@@ -18,6 +18,9 @@ public class LoginInfo implements Comparable<LoginInfo>{
 
     private String account;
 
+
+    private String address;
+
     private long login_time;
 
     //上次APP最终状态 false 处于登录界面 Yes处于主界面
@@ -65,16 +68,25 @@ public class LoginInfo implements Comparable<LoginInfo>{
         this.account = account;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "LoginInfo{" +
                 "id=" + id +
                 ", pwd='" + pwd + '\'' +
                 ", account='" + account + '\'' +
+                ", address='" + address + '\'' +
                 ", login_time=" + login_time +
+                ", main_state=" + main_state +
                 '}';
     }
-
 
     @Override
     public int compareTo(@NonNull LoginInfo o) {

@@ -8,5 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="login_edit_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:completionThreshold">1</item>
+        <item name="android:dropDownHeight">wrap_content</item>
+        <item name="android:dropDownVerticalOffset">1dip</item>
+        <item name="android:dropDownWidth">wrap_content</item>
+        <item name="android:gravity">bottom|center_horizontal|center_vertical</item>
+        <item name="android:background">@drawable/input_black</item>
+        <item name="android:paddingBottom">8dip</item>
+        <item name="android:paddingLeft">25.0dip</item>
+        <item name="android:paddingRight">25.0dip</item>
+        <item name="android:layout_marginTop">15.0dip</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/color_d2</item>
+        <item name="android:textSize">@dimen/BasicTextSize</item>
+    </style>
+
 
 </resources>

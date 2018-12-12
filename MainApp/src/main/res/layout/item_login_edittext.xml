@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dip"
+    android:focusableInTouchMode="true"
+    android:paddingLeft="45dp"
+    android:paddingRight="45dp">
+    <EditText
+        android:id="@+id/item_edit"
+        style="@style/login_edit_style"
+        android:imeOptions="actionNext"
+        android:maxLength="100">
+    </EditText>
+
+    <ImageView
+        android:id="@+id/clean_img"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@id/item_edit"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/item_edit"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:paddingLeft="5.0dip"
+        android:paddingTop="8.0dip"
+        android:src="@drawable/clean_sign_selector"
+        android:visibility="gone"/>
+
+</RelativeLayout>

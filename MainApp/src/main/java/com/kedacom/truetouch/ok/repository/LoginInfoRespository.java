@@ -4,6 +4,7 @@ package com.kedacom.truetouch.ok.repository;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MediatorLiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
 
 import com.kedacom.baseutil.AppExecutors;
 import com.kedacom.baseutil.StringUtil;
@@ -22,8 +23,8 @@ import java.util.List;
 public class LoginInfoRespository {
 
     private AppDatabase database;
-    private MutableLiveData<LoginInfo> loginInfoLiveData;
-    private MutableLiveData<Boolean> booleanMutableLiveData;
+    private final MutableLiveData<LoginInfo> loginInfoLiveData;
+    private final MutableLiveData<Boolean> booleanMutableLiveData;
     private LoginInfoRespository(){
         database = App.getInstance().getDataBase();
         booleanMutableLiveData = new MediatorLiveData<>();
@@ -46,9 +47,13 @@ public class LoginInfoRespository {
             @Override
             public void run() {
                 List<LoginInfo> loginInfos = database.getLoginInfoDao().queryAlluser();
-                if(loginInfos!=null){
+                if(loginInfos!=null && loginInfos.size()>0){
+
                     Collections.sort(loginInfos);
-                    loginInfoLiveData.postValue(loginInfos.get(0));
+                    LoginInfo loginInfo = loginInfos.get(0);
+                    if(loginInfo!=null){
+                        loginInfoLiveData.postValue(loginInfo);
+                    }
                 }
             }
         });

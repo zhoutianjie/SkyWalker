@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:layout_marginTop="80dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:gravity="center_horizontal">
+           <com.kedacom.truetouch.ok.widgt.CircleImageView
+               android:layout_marginTop="10dp"
+               android:id="@+id/head_img"
+               android:layout_width="80dp"
+               android:layout_height="80dp"
+               android:src="@drawable/ic_person_black_24dp"/>
+          <com.kedacom.truetouch.ok.widgt.LoginEditText
+              android:id="@+id/address_edit"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:hit="@string/server_adds"
+              app:requestFocus="true"/>
+           <com.kedacom.truetouch.ok.widgt.LoginEditText
+               android:id="@+id/account_edit"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:hit="@string/account"/>
+           <com.kedacom.truetouch.ok.widgt.LoginEditText
+               android:id="@+id/password_edit"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:hit="@string/password"/>
+
+           <Button
+               android:id="@+id/login_btn"
+               android:layout_width="54dip"
+               android:layout_height="54dip"
+               android:layout_gravity="center_horizontal"
+               android:layout_margin="35dip"
+               android:background="@drawable/login_btn"
+               android:gravity="center_vertical|center_horizontal"
+               android:text="@string/login_text"
+               android:textColor="@color/login_text_color"
+               android:textSize="@dimen/BasicTextSize" />
+
+       </LinearLayout>
+
+
+   </RelativeLayout>
+
+
+</layout>

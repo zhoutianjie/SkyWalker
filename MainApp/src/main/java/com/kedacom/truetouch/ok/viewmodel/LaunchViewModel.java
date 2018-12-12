@@ -13,7 +13,7 @@ import com.kedacom.truetouch.ok.repository.LoginInfoRespository;
 
 public class LaunchViewModel extends AndroidViewModel {
 
-    private LiveData<Boolean> directToMainUI;
+    public LiveData<Boolean> directToMainUI;
     private LoginInfoRespository respository;
     public LaunchViewModel(@NonNull Application application) {
         super(application);
