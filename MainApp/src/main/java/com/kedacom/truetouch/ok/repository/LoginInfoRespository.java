@@ -4,13 +4,15 @@ package com.kedacom.truetouch.ok.repository;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MediatorLiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.util.Log;
+import android.text.TextUtils;
+
 
 import com.kedacom.baseutil.AppExecutors;
 import com.kedacom.baseutil.StringUtil;
 import com.kedacom.truetouch.ok.db.AppDatabase;
-import com.kedacom.truetouch.ok.db.AppDatabase_Impl;
+
 import com.kedacom.truetouch.ok.db.entity.LoginInfo;
+
 import com.kedacom.truetouch.ok.main.App;
 
 import java.util.Collections;
@@ -25,10 +27,12 @@ public class LoginInfoRespository {
     private AppDatabase database;
     private final MutableLiveData<LoginInfo> loginInfoLiveData;
     private final MutableLiveData<Boolean> booleanMutableLiveData;
+
     private LoginInfoRespository(){
         database = App.getInstance().getDataBase();
         booleanMutableLiveData = new MediatorLiveData<>();
         loginInfoLiveData = new MediatorLiveData<>();
+
     }
 
     private static class SingleTonHolder{
@@ -84,5 +88,36 @@ public class LoginInfoRespository {
         });
 
         return booleanMutableLiveData;
+    }
+
+    //登录
+    public void login(final String address, final String account, final String pwd){
+
+        AppExecutors.Instance().getSingleThreadPool().execute(new Runnable() {
+            @Override
+            public void run() {
+                //保存的登录信息
+                LoginInfo loginInfo = new LoginInfo();
+                if(!TextUtils.isEmpty(address)){
+                    loginInfo.setAddress(address.trim());
+                }
+                if(!TextUtils.isEmpty(account)){
+                    loginInfo.setAccount(account.trim());
+                }
+                if(!TextUtils.isEmpty(pwd)){
+                    loginInfo.setPwd(pwd.trim());
+                }
+
+                if(TextUtils.isEmpty(address)){
+
+                }
+
+
+            }
+        });
+
+
+
+
     }
 }

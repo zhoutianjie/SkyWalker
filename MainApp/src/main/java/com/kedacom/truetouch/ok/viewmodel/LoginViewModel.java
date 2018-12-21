@@ -4,11 +4,13 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.databinding.BaseObservable;
+
 import android.support.annotation.NonNull;
+;
 
 import com.kedacom.truetouch.ok.db.entity.LoginInfo;
-import com.kedacom.truetouch.ok.repository.LoginApsRespository;
+import com.kedacom.truetouch.ok.login.bean.LoginProcess;
+
 import com.kedacom.truetouch.ok.repository.LoginInfoRespository;
 
 
@@ -18,14 +20,19 @@ import com.kedacom.truetouch.ok.repository.LoginInfoRespository;
 
 public class LoginViewModel extends AndroidViewModel{
 
+    /**
+     * 所有的LiveData 都放在ViewModel里面,respository 内部不再包含内部LiveData相关的引用
+     */
     private LiveData<LoginInfo> loginInfoLiveData;
-
+    private MutableLiveData<LoginProcess> loginProcessLiveData = new MutableLiveData<>();
+    private LoginProcess mLoginProcess;
 
 
     private LoginInfoRespository respository;
     public LoginViewModel(@NonNull Application application) {
         super(application);
         respository = LoginInfoRespository.Instance();
+        mLoginProcess = new LoginProcess();
     }
 
     public LiveData<LoginInfo> getLastUserLoginInfo(){
@@ -33,7 +40,36 @@ public class LoginViewModel extends AndroidViewModel{
         return loginInfoLiveData;
     }
 
+    public LiveData<LoginProcess> getLoginProcess(){
+
+        return loginProcessLiveData;
+    }
 
 
+    public void Login(String address,String account,String pwd){
+
+        mLoginProcess.setLoginState(LoginProcess.EmLoginState.LOGIN_ING);
+        loginProcessLiveData.setValue(mLoginProcess);
+
+
+
+
+    }
+
+    public void saveLoginInfo(String address,String account,String pwd){
+
+    }
+
+    public void clearAddress(){
+
+    }
+
+    public void clearAccount(){
+
+    }
+
+    public void clearPassword(){
+
+    }
 
 }

@@ -28,6 +28,7 @@ import com.kedacom.kdv.mt.mtapi.emun.EmMtModel;
 import com.kedacom.truetouch.audio.AudioDeviceAndroid;
 import com.kedacom.truetouch.ok.BuildConfig;
 import com.kedacom.truetouch.ok.R;
+import com.kedacom.truetouch.ok.repository.jnicallback.CompomentCallback;
 import com.kedacom.truetouch.ok.service.NetWorkListenerService;
 import com.kedacom.truetouch.ok.util.AppPathManager;
 import com.kedacom.truetouch.ok.util.NetWorkManager;
@@ -81,7 +82,7 @@ public class App extends BaseApp {
                 KernalCtrl.MtStart(nEmModel,strModelName,getString(R.string.android_version, versionName, compileTime),omeName);
                 MtcLib.Start(false);
                 //设置回调  所有消息从这里拿到
-                //MtcLib.Setcallback(new Object());
+                MtcLib.Setcallback(CompomentCallback.Instance());
                 //初始化 能力集
                 int callRate = 384;
                 MonitorCtrl.SetCallCapPlusCmd(VconfManager.Instance().getSendResolutionByCallRate(callRate)
